@@ -4,13 +4,13 @@
 #this setup is based on Ubuntu
 
 sudo apt update
-sudo apt upgrade
+apt upgrade
 
 #install tools
-sudo apt install neofetch
-sudo apt install fzf    #https://github.com/junegunn/fzf
-sudo apt install bat    #https://github.com/sharkdp/bat
-sudo apt install lsd    #https://github.com/ogham/exa?tab=readme-ov-file    #newer eza => https://github.com/eza-community/eza or lsd => https://github.com/lsd-rs/lsd
+apt install neofetch
+apt install fzf    #https://github.com/junegunn/fzf
+apt install bat    #https://github.com/sharkdp/bat
+apt install lsd    #https://github.com/ogham/exa?tab=readme-ov-file    #newer eza => https://github.com/eza-community/eza or lsd => https://github.com/lsd-rs/lsd
 
 
 #setup neofetch
@@ -19,9 +19,9 @@ cp -f ./neofetch/config.conf ~/.config/neofetch/config.conf
 #setup fish shell
 #https://github.com/fish-shell/fish-shell
 #install
-sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt update
-sudo apt install fish
+apt-add-repository ppa:fish-shell/release-3
+apt update
+apt install fish
 #config
 cp -f ./fish/config.fish ~/.config/fish/config.fish
 cp -f ./fish/fish_variables ~/.config/fish/config.fish
