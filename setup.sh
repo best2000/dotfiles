@@ -10,7 +10,7 @@ apt upgrade
 apt install neofetch
 apt install fzf    #https://github.com/junegunn/fzf
 apt install bat    #https://github.com/sharkdp/bat
-apt install lsd    #https://github.com/ogham/exa?tab=readme-ov-file    #newer eza => https://github.com/eza-community/eza or lsd => https://github.com/lsd-rs/lsd
+apt install exa    #https://github.com/ogham/exa?tab=readme-ov-file    #newer eza => https://github.com/eza-community/eza or lsd => https://github.com/lsd-rs/lsd
 
 
 #setup neofetch
