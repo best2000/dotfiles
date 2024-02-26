@@ -23,8 +23,9 @@ cp -f ./neofetch/config.conf ~/.config/neofetch/config.conf
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
 sudo apt install fish
-exec fish && sleep 1
+# exec fish && sleep 1
 #config
+mkdir ~/.config/fish
 cp -f ./fish/config.fish ~/.config/fish/config.fish
 cp -f ./fish/fish_variables ~/.config/fish/config.fish
 #set default shell
@@ -36,7 +37,7 @@ sudo chsh -s $(which fish)
 sudo curl -sS https://starship.rs/install.sh | sh
 echo -e 'starship init fish | source' >> ~/.config/fish/config.fish
 #config
-mkdir -p ~/.config
+# mkdir -p ~/.config
 cp ./starship/starship.toml ~/.config/starship.toml
 
 exec $SHELL
