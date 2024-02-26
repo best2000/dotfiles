@@ -11,25 +11,23 @@ sudo apt install neofetch
 sudo apt install fzf    #https://github.com/junegunn/fzf
 sudo apt install bat    #https://github.com/sharkdp/bat
 sudo apt install exa    #https://github.com/ogham/exa?tab=readme-ov-file    #newer eza => https://github.com/eza-community/eza or lsd => https://github.com/lsd-rs/lsd
-
+sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt update
+sudo apt install fish  #https://github.com/fish-shell/fish-shell
 
 #setup neofetch
 neofetch && sleep 1
 cp -f ./neofetch/config.conf ~/.config/neofetch/config.conf
 
 #setup fish shell
-#https://github.com/fish-shell/fish-shell
-#install
-sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt update
-sudo apt install fish
-# exec fish && sleep 1
+exec fish && sleep 1   # try first time fish shell session then exit
 #config
 mkdir ~/.config/fish
 cp -f ./fish/config.fish ~/.config/fish/config.fish
-cp -f ./fish/fish_variables ~/.config/fish/config.fish
+cp -f ./fish/fish_variables ~/.config/fish/fish_variables
 #set default shell
 sudo chsh -s $(which fish)
+
 
 #setup starship prompt
 # https://starship.rs/
@@ -40,6 +38,7 @@ echo -e 'starship init fish | source' >> ~/.config/fish/config.fish
 # mkdir -p ~/.config
 cp ./starship/starship.toml ~/.config/starship.toml
 
+echo $SHELL
 exec $SHELL
 
 #fish web config run => 'fish_config'
