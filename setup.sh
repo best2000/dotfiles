@@ -8,12 +8,16 @@ sudo apt upgrade
 
 #install tools
 sudo apt install neofetch
-sudo apt install fzf    #https://github.com/junegunn/fzf
-sudo apt install bat    #https://github.com/sharkdp/bat
-sudo apt install exa    #https://github.com/ogham/exa?tab=readme-ov-file    #newer eza => https://github.com/eza-community/eza or lsd => https://github.com/lsd-rs/lsd
+#https://github.com/junegunn/fzf
+sudo apt install fzf
+#https://github.com/sharkdp/bat
+sudo apt install bat    
+#https://github.com/ogham/exa?tab=readme-ov-file    #newer eza => https://github.com/eza-community/eza or lsd => https://github.com/lsd-rs/lsd
+sudo apt install exa    
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
-sudo apt install fish  #https://github.com/fish-shell/fish-shell
+#https://github.com/fish-shell/fish-shell
+sudo apt install fish  
 
 #setup neofetch
 neofetch && sleep 1
