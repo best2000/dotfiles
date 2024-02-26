@@ -1,101 +1,60 @@
 # A minimal left prompt
-format = """
-[ ](bold green)$username\
-$hostname\
-$localip\
-$shlvl\
-$singularity\
-$kubernetes\
-$directory\
-$vcsh\
-$fossil_branch\
-$fossil_metrics\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
-$hg_branch\
-$pijul_channel\
-$docker_context\
-$package\
-$c\
-$cmake\
-$cobol\
-$daml\
-$dart\
-$deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$fennel\
-$golang\
-$guix_shell\
-$haskell\
-$haxe\
-$helm\
-$java\
-$julia\
-$kotlin\
-$gradle\
-$lua\
-$nim\
-$nodejs\
-$ocaml\
-$opa\
-$perl\
-$php\
-$pulumi\
-$purescript\
-$python\
-$raku\
-$rlang\
-$red\
-$ruby\
-$rust\
-$scala\
-$solidity\
-$swift\
-$terraform\
-$typst\
-$vlang\
-$vagrant\
-$zig\
-$buf\
-$nix_shell\
-$conda\
-$meson\
-$spack\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$azure\
-$direnv\
-$env_var\
-$crystal\
-$custom\
-$sudo\
-$cmd_duration\
-$line_break\
-$jobs\
-$battery\
-$time\
-$status\
-$os\
-$container\
-$shell\
-[│](bold green)
-[└─](bold green)$character
+format = """$username$directory\
+$git_branch$git_commit$git_state$git_metrics$git_status\
+$kubernetes$container$docker_context
+$fill\
+$cmd_duration$jobs
+$character
 """
-
-add_newline = true
+# 
+# $fill\
 
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 1000
 
-[character] # The name of the module we are configuring is 'character'
-success_symbol = '[❯](bold green)'
-error_symbol  = '[](bold red)❯](bold green)'
+[character] # ❯ 
+success_symbol = '[](bold green)[❯](bold yellow)'
+error_symbol  = '[](bold red)[❯](bold yellow)'
 
+[fill]
+symbol = " "
+style = "bold green"
+disabled = false
+
+#🔒
+[directory]
+truncate_to_repo = false
+style = "blue bold"
+read_only = " 󰌾"
+read_only_style = "yellow"
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[sudo]
+disabled = true
+symbol = "󰌆"
+style = "bold yellow"
+format ="[$symbol]($style) "
+
+[username]
+show_always = true
+style_user = "green bold"
+style_root = "yellow bold"
+format = "[$user]($style) "
+
+[cmd_duration]
+min_time = 2000
+show_milliseconds = false
+format = " took[ $duration]($style) "
+style = "yellow bold"
+disabled = false
+
+[jobs]
+number_threshold = 2
+format = "[ $number $symbol](bold yellow) "
+symbol = ""
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "bold cyan"
+
+# 󰡨 
