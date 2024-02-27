@@ -1,6 +1,7 @@
 #set alias
 alias bat "batcat"
 alias ls "exa"
+alias ll "exa -lah --icons"
 
 set fish_greeting ""
 
@@ -16,10 +17,6 @@ end
 
 function bafz 
     batcat $(find * -type f | fzf) 
-end
-
-function ll 
-    exa -lah --icons 
 end
 
 starship init fish | source

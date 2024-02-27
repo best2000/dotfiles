@@ -55,6 +55,6 @@ symbol = ""
 
 [git_branch]
 format = "[$symbol$branch(:$remote_branch)]($style) "
-style = "bold cyan"
+style = "bold purple"
 
 # 󰡨 

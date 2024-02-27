@@ -3,6 +3,8 @@
 #ref https://github.com/craftzdog/dotfiles-public
 #this setup is based on Ubuntu
 
+set -e
+
 sudo apt update
 sudo apt upgrade
 
@@ -21,14 +23,14 @@ sudo apt install fish
 
 #setup neofetch
 neofetch && sleep 1
-cp -f ./neofetch/config.conf ~/.config/neofetch/config.conf
+cp ./neofetch/config.conf ~/.config/neofetch/config.conf
 
 #setup fish shell
 exec fish && sleep 1   # try first time fish shell session then exit
 #config
 mkdir ~/.config/fish
-cp -f ./fish/config.fish ~/.config/fish/config.fish
-cp -f ./fish/fish_variables ~/.config/fish/fish_variables
+cp ./fish/config.fish ~/.config/fish/config.fish
+cp ./fish/fish_variables ~/.config/fish/fish_variables
 #set default shell
 sudo chsh -s $(which fish)
 
@@ -43,6 +45,5 @@ echo -e 'starship init fish | source' >> ~/.config/fish/config.fish
 cp ./starship/starship.toml ~/.config/starship.toml
 
 echo $SHELL
-exec $SHELL
 
 #fish web config run => 'fish_config'
